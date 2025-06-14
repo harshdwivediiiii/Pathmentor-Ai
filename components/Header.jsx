@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   PenBox,
@@ -24,9 +24,15 @@ import { useTheme } from "next-themes";
 
 export default function Header() {
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch by rendering static image until mounted
   const logoSrc =
-    resolvedTheme === "dark" ? "/logo.png" : "/dark-logo.png";
+    mounted && resolvedTheme === "dark" ? "/logo.png" : "/dark-logo.png";
 
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">

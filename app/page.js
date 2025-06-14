@@ -26,9 +26,10 @@ import { features } from "@/data/features";
 import { testimonial } from "@/data/testimonial";
 import { faqs } from "@/data/faqs";
 import { howItWorks } from "@/data/howItWorks";
-import HeroSection from "@/components/HeroSection";
+
 import { useTheme } from "next-themes";
 import InteractiveBackground from "@/components/Background";
+import HeroSection from "@/components/Herosection";
 
 
 
