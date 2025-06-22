@@ -29,6 +29,7 @@ import {
 import useFetch from "@/hooks/use-fetch";
 import { onboardingSchema } from "@/app/lib/schema";
 import { updateUser } from "@/actions/user";
+import InteractiveBackground from "@/components/Background";
 
 const OnboardingForm = ({ industries }) => {
   const router = useRouter();
@@ -76,8 +77,9 @@ const OnboardingForm = ({ industries }) => {
   const watchIndustry = watch("industry");
 
   return (
-    <div className="flex items-center justify-center bg-background">
+    <div className="flex items-center justify-center ">
       <Card className="w-full max-w-lg mt-10 mx-2">
+        <InteractiveBackground isDarkMode={false} />
         <CardHeader>
           <CardTitle className="gradient-title text-4xl">
             Complete Your Profile
